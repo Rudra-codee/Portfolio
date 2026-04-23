@@ -39,8 +39,6 @@ import {
   skill8,
   skill11,
   skill12,
-<<<<<<< HEAD
-=======
   nextjs,
   nodejs,
   expressjs,
@@ -48,7 +46,6 @@ import {
   postgresql,
   prisma,
   redis,
->>>>>>> b70f769 (added new Skills & Projects)
 } from "../assets";
 
 export const navigation = [
@@ -151,15 +148,6 @@ export const aboutContent = [
   },
   {
     id: "1",
-<<<<<<< HEAD
-    title: "Frontend Focus",
-    text: "Specializing in React, TypeScript, and responsive design",
-  },
-  {
-    id: "2",
-    title: "Full-stack Capable",
-    text: "Experience with backend technologies and database systems",
-=======
     title: "Full-Stack Engineer",
     text: "Building end-to-end products with React, Next.js, Node.js, Express, PostgreSQL, MongoDB and Prisma",
   },
@@ -172,7 +160,6 @@ export const aboutContent = [
     id: "3",
     title: "Data Visualization",
     text: "Visualizing insights with Tableau, Power BI and Excel — turning raw data into decisions",
->>>>>>> b70f769 (added new Skills & Projects)
   },
 ];
 
@@ -253,8 +240,6 @@ export const techStack = [
     icon: skill12,
     width: 36,
     height: 36,
-<<<<<<< HEAD
-=======
   },
   {
     id: "11",
@@ -304,7 +289,6 @@ export const techStack = [
     icon: redis,
     width: 36,
     height: 36,
->>>>>>> b70f769 (added new Skills & Projects)
   }
 ];
 

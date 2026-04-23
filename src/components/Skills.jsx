@@ -11,8 +11,6 @@ import skill9 from '../assets/skill9.svg';
 import skill10 from '../assets/skill10.svg';
 import skill11 from '../assets/skill11.png';
 import skill12 from '../assets/skill12.png';
-<<<<<<< HEAD
-=======
 import nextjs from '../assets/nextjs.svg';
 import nodejs from '../assets/nodejs.svg';
 import expressjs from '../assets/expressjs.svg';
@@ -23,7 +21,6 @@ import redis from '../assets/redis.svg';
 import llmApis from '../assets/llm-apis.svg';
 import ragPgvector from '../assets/rag-pgvector.svg';
 import astParsing from '../assets/ast-parsing.svg';
->>>>>>> b70f769 (added new Skills & Projects)
 
 const Skills = () => {
   const [activeSkill, setActiveSkill] = useState(null);
@@ -150,8 +147,6 @@ const Skills = () => {
       category: 'Design',
       description: 'Data manipulation and analysis library'
     },
-<<<<<<< HEAD
-=======
     {
       id: 13,
       image: nextjs,
@@ -222,7 +217,6 @@ const Skills = () => {
       category: 'AI/ML',
       description: 'Structured code analysis techniques for syntax-aware transformations and tooling'
     },
->>>>>>> b70f769 (added new Skills & Projects)
   ];
 
   // Get unique categories

@@ -1,9 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { github } from "../assets";
-<<<<<<< HEAD
-=======
 import { chatWithAssistant } from '../lib/groq';
->>>>>>> b70f769 (added new Skills & Projects)
 
 const ChatBot = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -20,17 +17,10 @@ const ChatBot = () => {
   const inputRef = useRef(null);
 
   const suggestions = [
-<<<<<<< HEAD
-    "Tell me about Rudraksh's skills",
-    "What projects has he worked on?",
-    "How can I contact him?",
-    "What's his educational background?"
-=======
     "What makes Rudraksh stand out?",
     "Show me his AI projects",
     "Is he available for internships?",
     "What's his strongest tech stack?"
->>>>>>> b70f769 (added new Skills & Projects)
   ];
 
   const scrollToBottom = () => {
@@ -47,59 +37,6 @@ const ChatBot = () => {
     }
   }, [isOpen]);
 
-<<<<<<< HEAD
-  const getAIResponse = async (message) => {
-    try {
-      if (!import.meta.env.VITE_OPENAI_API_KEY) {
-        console.error('OpenAI API key is not configured');
-        return "I apologize, but I'm not properly configured yet. Please make sure the API key is set correctly.";
-      }
-
-      const response = await fetch('https://api.openai.com/v1/chat/completions', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': `Bearer ${import.meta.env.VITE_OPENAI_API_KEY}`
-        },
-        body: JSON.stringify({
-          model: "gpt-3.5-turbo",
-          messages: [
-            {
-              role: "system",
-              content: "You are a helpful AI assistant for Rudraksh's portfolio website. Keep responses concise and friendly. If you don't know something specific about Rudraksh, provide a general helpful response."
-            },
-            {
-              role: "user",
-              content: message
-            }
-          ],
-          max_tokens: 150,
-          temperature: 0.7
-        })
-      });
-
-      if (!response.ok) {
-        const errorData = await response.json().catch(() => ({}));
-        console.error('API Error:', errorData);
-        throw new Error(errorData.error?.message || 'API request failed');
-      }
-
-      const data = await response.json();
-      if (!data.choices?.[0]?.message?.content) {
-        throw new Error('Invalid response format');
-      }
-
-      return data.choices[0].message.content;
-    } catch (error) {
-      console.error('Error fetching AI response:', error);
-      if (error.message.includes('API key')) {
-        return "I apologize, but there seems to be an issue with my API configuration. Please contact the administrator.";
-      }
-      if (error.message.includes('rate limit')) {
-        return "I'm receiving too many requests right now. Please try again in a moment.";
-      }
-      return "I apologize, but I'm having trouble processing your request. You can ask me specific questions about Rudraksh's education, skills, or projects instead.";
-=======
   const getAIResponse = async (conversationHistory) => {
     try {
       if (!import.meta.env.VITE_GROQ_API_KEY) {
@@ -122,7 +59,6 @@ const ChatBot = () => {
     } catch (error) {
       console.error('Error fetching AI response:', error);
       return "I can help with Rudraksh's background, projects, and strengths, but the assistant hit a temporary issue. Please try again in a moment.";
->>>>>>> b70f769 (added new Skills & Projects)
     }
   };
 
@@ -137,14 +73,6 @@ const ChatBot = () => {
     setInputMessage('');
     setIsLoading(true);
 
-<<<<<<< HEAD
-    const botResponse = await getBotResponse(messageToSend, newMessages);
-    
-    setMessages([...newMessages, {
-      type: 'bot',
-      content: botResponse
-    }]);
-=======
     const botResponse = await getAIResponse(newMessages);
 
     setMessages([
@@ -154,54 +82,9 @@ const ChatBot = () => {
         content: botResponse,
       },
     ]);
->>>>>>> b70f769 (added new Skills & Projects)
     setIsLoading(false);
     setShowSuggestions(true);
   };
-
-<<<<<<< HEAD
-  const getBotResponse = async (message, currentMessages) => {
-    const lowerMessage = message.toLowerCase();
-
-    // Check for specific patterns first
-    if (lowerMessage.includes('who') && lowerMessage.includes('rudra')) {
-      return "I'm an AI assistant for Rudraksh Pathak, a Computer Science & AI student specializing in modern web technologies. He's passionate about building intuitive, performant user experiences.";
-    }
-
-    if (lowerMessage.includes('education') || lowerMessage.includes('study') || lowerMessage.includes('college')) {
-      return "Rudraksh is currently pursuing a BTech in Computer Science & Artificial Intelligence at Newton School of Technology. It's a modern tech institute focused on hands-on learning and industry skills.";
-    }
-
-    if (lowerMessage.includes('skills') || lowerMessage.includes('tech')) {
-      return "Rudraksh is proficient in React, TypeScript, Node.js, and various modern web technologies. You can see his tech stack rotating in the skills wheel above!";
-    }
-
-    if (lowerMessage.includes('contact') || lowerMessage.includes('reach')) {
-      return "You can contact Rudraksh through LinkedIn or GitHub. Would you like me to share any of these links?";
-    }
-
-    if (lowerMessage.includes('yes') && (currentMessages[currentMessages.length - 2]?.content.includes('Would you like me to share'))) {
-      return "Which platform would you prefer? GitHub or LinkedIn?";
-    }
-
-    if (lowerMessage.includes('github') && (currentMessages[currentMessages.length - 2]?.content.includes('Which platform'))) {
-      return 'Here\'s Rudraksh\'s GitHub profile: <a href="https://github.com/Rudra-codee" target="_blank" class="text-color-1 hover:underline">github.com/Rudra-codee</a>';
-    }
-
-    if (lowerMessage.includes('linkedin') && (currentMessages[currentMessages.length - 2]?.content.includes('Which platform'))) {
-      return 'Here\'s Rudraksh\'s LinkedIn profile: <a href="https://www.linkedin.com/in/rudraksh-rathod-5a891431a" target="_blank" class="text-color-1 hover:underline">linkedin.com/in/rudraksh-rathod</a>';
-    }
-
-    if (lowerMessage.includes('project') || lowerMessage.includes('work')) {
-      return "Rudraksh has worked on various projects including AI chatbots, full-stack web applications, and more. Check out his projects section to explore his recent work!";
-    }
-
-    // If no specific pattern matches, use the AI API
-    return await getAIResponse(message);
-  };
-
-=======
->>>>>>> b70f769 (added new Skills & Projects)
   return (
     <div className="fixed bottom-5 right-5 z-[9999]">
       {!isOpen ? (
@@ -269,15 +152,11 @@ const ChatBot = () => {
             ))}
             {isLoading && (
               <div className="flex justify-start animate-slideIn">
-<<<<<<< HEAD
-                <div className="max-w-[80%] p-4 rounded-2xl bg-n-6 text-n-1">
-=======
                 <div className="max-w-[80%] p-4 rounded-2xl bg-n-6 text-n-1 shadow-lg">
                   <div className="flex items-center space-x-2 mb-2">
                     <div className="w-2 h-2 rounded-full bg-color-1" />
                     <span className="text-xs text-n-3">Rudra's Assistant</span>
                   </div>
->>>>>>> b70f769 (added new Skills & Projects)
                   <div className="flex items-center space-x-2">
                     <div className="w-2 h-2 bg-n-1 rounded-full animate-bounce" style={{ animationDelay: '0ms' }} />
                     <div className="w-2 h-2 bg-n-1 rounded-full animate-bounce" style={{ animationDelay: '150ms' }} />

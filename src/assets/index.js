@@ -90,8 +90,6 @@ import skill9 from "./skill9.svg";
 import skill10 from "./skill10.svg";
 import skill11 from "./skill11.png";
 import skill12 from "./skill12.png";
-<<<<<<< HEAD
-=======
 import nextjs from "./nextjs.svg";
 import nodejs from "./nodejs.svg";
 import expressjs from "./expressjs.svg";
@@ -99,7 +97,6 @@ import mongodb from "./mongodb.svg";
 import postgresql from "./postgresql.svg";
 import prisma from "./prisma.svg";
 import redis from "./redis.svg";
->>>>>>> b70f769 (added new Skills & Projects)
 
 export {
   brainwave,
@@ -186,8 +183,6 @@ export {
   skill10,
   skill11,
   skill12,
-<<<<<<< HEAD
-=======
   nextjs,
   nodejs,
   expressjs,
@@ -195,5 +190,4 @@ export {
   postgresql,
   prisma,
   redis,
->>>>>>> b70f769 (added new Skills & Projects)
 };

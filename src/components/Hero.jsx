@@ -2,10 +2,6 @@ import { useRef, useEffect, useState, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Section from "./Section";
 import { Button } from "./design/Button";
-<<<<<<< HEAD
-import robotImage from "../assets/hero/robot.jpeg";
-import backgroundImage from "../assets/background.jpeg";
-=======
 
 const heroImages = [
   "/images/hero1.jpg", // collage 1 - kurta + dog + bike
@@ -13,16 +9,12 @@ const heroImages = [
   "/images/hero3.jpg", // collage 3 - event + mountains
   "/images/hero4.jpg", // collage 4 - white kurta + gym + mirror
 ];
->>>>>>> b70f769 (added new Skills & Projects)
 
 const Hero = () => {
   const containerRef = useRef(null);
   const [isHovered, setIsHovered] = useState(false);
-<<<<<<< HEAD
-=======
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [isCarouselPaused, setIsCarouselPaused] = useState(false);
->>>>>>> b70f769 (added new Skills & Projects)
   
   // Typing animation with optimized timing
   const roles = ["Frontend Developer", "UI/UX Designer", "Problem Solver"];
@@ -67,8 +59,6 @@ const Hero = () => {
     }
   };
 
-<<<<<<< HEAD
-=======
   useEffect(() => {
     if (isCarouselPaused || heroImages.length <= 1) {
       return;
@@ -81,7 +71,6 @@ const Hero = () => {
     return () => clearInterval(carouselTimer);
   }, [isCarouselPaused]);
 
->>>>>>> b70f769 (added new Skills & Projects)
   return (
     <Section
       className="min-h-screen bg-n-8 relative overflow-hidden"
@@ -225,11 +214,7 @@ const Hero = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-<<<<<<< HEAD
-          className="relative max-w-[1000px] mx-auto"
-=======
           className="relative max-w-[760px] mx-auto"
->>>>>>> b70f769 (added new Skills & Projects)
           onHoverStart={() => setIsHovered(true)}
           onHoverEnd={() => setIsHovered(false)}
         >
@@ -386,17 +371,7 @@ const Hero = () => {
                   </div>
                 </div>
                 
-                {/* Night Silhouette Image */}
-<<<<<<< HEAD
-                <div className="aspect-video relative group">
-                  <motion.img
-                    src={backgroundImage}
-                    alt="Night Silhouette"
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                    whileHover={{ scale: 1.05 }}
-                    transition={{ duration: 0.7 }}
-                  />
-=======
+                {/* Hero Carousel */}
                 <div
                   className="aspect-[4/5] relative group"
                   onMouseEnter={() => setIsCarouselPaused(true)}
@@ -414,7 +389,6 @@ const Hero = () => {
                       transition={{ duration: 0.8, ease: "easeInOut" }}
                     />
                   </AnimatePresence>
->>>>>>> b70f769 (added new Skills & Projects)
                   {/* Image Glow Effects */}
                   <motion.div 
                     className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-blue-500/10 to-transparent pointer-events-none"
@@ -437,8 +411,6 @@ const Hero = () => {
                     }}
                     transition={{ duration: 0.3 }}
                   />
-<<<<<<< HEAD
-=======
                   <div className="absolute bottom-4 left-1/2 z-10 flex -translate-x-1/2 items-center gap-2">
                     {heroImages.map((image, index) => (
                       <button
@@ -452,7 +424,6 @@ const Hero = () => {
                       />
                     ))}
                   </div>
->>>>>>> b70f769 (added new Skills & Projects)
                 </div>
               </div>
             </div>
