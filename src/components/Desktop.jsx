@@ -28,7 +28,7 @@ const Desktop = () => {
       description: "AI-powered GitHub repository documentation platform. Doxsy generates structured, file-level technical documentation from any codebase in minutes — with a rich browsable UI and shareable public documentation links.",
       preview: doxsyImg,
       github: "https://github.com/Rudra-codee/Doxsy",
-      live: "https://doxsy-4jsu.vercel.app/"
+      live: "https://doxsy-4jsu-fb0m3a0xe-rudraksh969977-gmailcoms-projects.vercel.app/repo/1218827121"
     },
     {
       id: 3,
