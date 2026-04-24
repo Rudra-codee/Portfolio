@@ -17,7 +17,7 @@ const Hero = () => {
   const [isCarouselPaused, setIsCarouselPaused] = useState(false);
   
   // Typing animation with optimized timing
-  const roles = ["Frontend Developer", "UI/UX Designer", "Problem Solver"];
+  const roles = ["Full-Stack Developer", "UI/UX Designer", "Problem Solver"];
   const [currentRole, setCurrentRole] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
   const [text, setText] = useState('');
